@@ -6,12 +6,12 @@ $(document).ready(function() {
     $.validator.addMethod('noSpace', function(value, element) {
             return !/\s/g.test(value);
     }, 'The name contains white spaces.');
-
+    
     $.validator.addMethod('passwordValidate', function(value) {
         if((value.length>5 && value.length<31)&&(value.match(/[a-z]/))&&(value.match(/[A-Z]/)&&(value.match(/.[!,@,#,$,%,^,&,*,(,)]/)&&value.match(/[0-9]/)))){
             return true
         }
-}, 'password does not meet the requirements');
+}, i18n.t('password does not meet the requirements'));
 
 
     $("#change-password").validate({
