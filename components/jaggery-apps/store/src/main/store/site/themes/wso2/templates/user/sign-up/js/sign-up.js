@@ -8,6 +8,12 @@ $(document).ready(function() {
             return !/\s/g.test(value);
     }, i18n.t('The name contains white spaces.'));
 
+    $.validator.addMethod('passwordValidate', function(value) {
+        if((value.length>5 && value.length<31)&&(value.match(/[a-z]/))&&(value.match(/[A-Z]/)&&(value.match(/.[!,@,#,$,%,^,&,*,(,)]/)&&value.match(/[0-9]/)))){
+            return true
+        }
+}, i18n.t('password does not meet the requirements'));
+
     var purposes = document.getElementById("consentPurposes").value;
     if (purposes != undefined && purposes != null && purposes != "") {
       purposes = JSON.parse(document.getElementById("consentPurposes").value);
