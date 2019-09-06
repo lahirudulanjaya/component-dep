@@ -54,7 +54,7 @@ $.validator.setDefaults({
 
 			if (password.match(/\d+/)) passwordStrength++;
 
-			if (password.match(/.[!,@,#,$,%,^,&,*,?,_,~,-,(,)]/))	passwordStrength++;
+			if (password.match(/.[!,@,#,$,%,^,&,*,?,_,~,-,(,)]/) && password.match(/[0-9]/))	passwordStrength++;
 
 			if (password.length > 12) passwordStrength++;
 
